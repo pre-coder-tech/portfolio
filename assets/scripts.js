@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Intersection Observer options
   const observerOptions = {
     root: null, // Use the viewport as the root
-    threshold: 0.5, // 50% of the section should be visible
+    threshold: 0.2, // 50% of the section should be visible
   };
 
   // Intersection Observer callback
