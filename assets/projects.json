@@ -1,0 +1,21 @@
+{
+    "projects": {
+      "project1": {
+        "title": "Project 1",
+        "type": "Self Learning",
+        "videos": ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"],
+        "images": ["assets/images/cucumber_java_udemy.jpg", "assets/images/another_image.jpg", "assets/images/cucumber_java_udemy.jpg","assets/images/cucumber_java_udemy.jpg","assets/images/cucumber_java_udemy.jpg","assets/images/cucumber_java_udemy.jpg"],
+        "technologies": "Python, Selenium, HTML",
+        "repo": "https://github.com/example/project1"
+      },
+      "project2": {
+        "title": "Project 2",
+        "type": "Office Work",
+        "videos": ["https://www.example.com/video2.mp4"],
+        "images": ["assets/images/project2_img1.jpg"],
+        "technologies": "JavaScript, React",
+        "repo": "https://github.com/example/project2"
+      }
+    }
+  }
+  

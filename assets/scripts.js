@@ -118,3 +118,71 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Fetch project data dynamically from the JSON file
+async function fetchProjectData() {
+  try {
+    const response = await fetch("assets/projects.json"); // Path to your JSON file
+    const data = await response.json();
+    return data.projects;
+  } catch (error) {
+    console.error("Error fetching project data:", error);
+    return null;
+  }
+}
+
+// Function to open the modal
+async function openModal(projectKey) {
+  const projects = await fetchProjectData();
+  if (!projects || !projects[projectKey]) {
+    console.error("Project not found:", projectKey);
+    return;
+  }
+
+  const project = projects[projectKey];
+
+  // Set modal content
+  document.getElementById("modalTitle").innerText = project.title;
+  document.getElementById("modalType").innerText = project.type;
+  document.getElementById("modalTechnologies").innerText = project.technologies;
+  const repoLink = document.getElementById("modalRepo");
+  repoLink.href = project.repo;
+  repoLink.style.display = project.repo ? "inline" : "none";
+
+  // Populate the slider
+  const slider = document.getElementById("modalSlider");
+  slider.innerHTML = ""; // Clear previous content
+
+  // Add videos first
+  project.videos.forEach((videoUrl) => {
+    const videoElement = document.createElement("video");
+    videoElement.src = videoUrl;
+    videoElement.controls = true; // Add playback controls
+    videoElement.className = "slider-item";
+    slider.appendChild(videoElement);
+  });
+
+  // Add images
+  project.images.forEach((imageUrl) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = imageUrl;
+    imgElement.alt = project.title;
+    imgElement.className = "slider-item";
+    slider.appendChild(imgElement);
+  });
+
+  // Show the modal
+  document.getElementById("projectModal").style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById("projectModal").style.display = "none";
+}
+
+// Close modal if clicked outside the modal content
+window.onclick = function (event) {
+  const modal = document.getElementById("projectModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};

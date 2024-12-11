@@ -69,16 +69,6 @@ The portfolio is designed with a modern and professional look, featuring respons
 
 ---
 
-## How to Use
-
-1. Clone or download this repository.
-2. Open the `index.html` file in a web browser to view the portfolio.
-3. Modify the content in `index.html` as needed to personalize the portfolio.
-4. Update the styles in `assets/styles.css` to customize the look and feel.
-5. Add scripts to `assets/scripts.js` to enhance interactivity.
-
----
-
 ## Features
 
 - **Responsive Design**: Adjusts seamlessly for desktops, tablets, and mobile devices.

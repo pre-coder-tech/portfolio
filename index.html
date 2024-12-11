@@ -11,7 +11,6 @@
 </head>
 
 <body>
-  <div class="parallax"></div>
   <!-- Header Section -->
   <header class="header">
     <h1>Preethi Warrier</h1>
@@ -146,10 +145,55 @@
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
       <h2 class="section-title">Projects</h2>
-      <div id="projectsCarousel" class="projectsCarousel">
+      <!-- <div id="projectsCarousel" class="projectsCarousel">
         Coming Soon.....
-      </div>
+      </div> -->
+
     </section>
+    <div id="projectsCarousel" class="projectsCarousel">
+      <div class="pro" onclick="openModal('project1')">
+        <img src="assets/images/cucumber_java_udemy.jpg" alt="Notebook">
+        <div class="con">
+          <p>Heading</p>
+
+        </div>
+      </div>
+      <div class="pro" onclick="openModal('project1')">
+        <img src="assets/images/cucumber_java_udemy.jpg" alt="Notebook">
+        <div class="con">
+          <p>Heading</p>
+
+        </div>
+      </div>
+      <div class="pro" onclick="openModal('project1')">
+        <img src="assets/images/cucumber_java_udemy.jpg" alt="Notebook">
+        <div class="con">
+          <p>Heading</p>
+
+        </div>
+      </div>
+      <div class="pro" onclick="openModal('project1')">
+        <img src="assets/images/cucumber_java_udemy.jpg" alt="Notebook">
+        <div class="con">
+          <p>Heading</p>
+
+        </div>
+      </div>
+      <div class="pro" onclick="openModal('project1')">
+        <img src="assets/images/cucumber_java_udemy.jpg" alt="Notebook">
+        <div class="con">
+          <p>Heading</p>
+
+        </div>
+      </div>
+      <div class="pro" onclick="openModal('project1')">
+        <img src="assets/images/cucumber_java_udemy.jpg" alt="Notebook">
+        <div class="con">
+          <p>Heading</p>
+
+        </div>
+      </div>
+    </div>
 
     <!-- Experience Section -->
     <section id="experience" class="experience-section">
@@ -239,13 +283,31 @@
         Coming Soon.....
       </div>
     </section>
+
+    <!-- Modal Structure -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p><strong>Project Type:</strong> <span id="modalType"></span></p>
+        <p><strong>Technologies Used:</strong> <span id="modalTechnologies"></span></p>
+        <p><strong>Repository:</strong> <a id="modalRepo" href="#" target="_blank">View Repo</a></p>
+
+        <!-- Slider for videos and images -->
+        <div class="slider" id="modalSlider">
+          <!-- Dynamic content will be inserted here -->
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="icon-bar">
-    <a class="envelope" href="mailto:preethi.warrier1610@gmail.com" data-tooltip="Send me an email"><i class="fa fa-envelope"></i></a>
-    <a class="linkedin" href="https://www.linkedin.com/in/preethiwarrier1610/" target="_blank" data-tooltip="Visit my LinkedIn profile"><i
-        class="fa fa-linkedin"></i></a>
-    <a class="download" href="assets/PreethiWarrier_Resume.pdf" download data-tooltip="Download my resume"><i class="fa fa-download"> </i></a>
+    <a class="envelope" href="mailto:preethi.warrier1610@gmail.com" data-tooltip="Send me an email"><i
+        class="fa fa-envelope"></i></a>
+    <a class="linkedin" href="https://www.linkedin.com/in/preethiwarrier1610/" target="_blank"
+      data-tooltip="Visit my LinkedIn profile"><i class="fa fa-linkedin"></i></a>
+    <a class="download" href="assets/PreethiWarrier_Resume.pdf" download data-tooltip="Download my resume"><i
+        class="fa fa-download"> </i></a>
   </div>
 
   <!-- Footer -->
@@ -253,7 +315,6 @@
     <p style="margin-top: 0; font-size: medium;">Created with the help of W3Schools &#9829;</p>
   </footer>
 
-  <div class="parallax"></div>
   <script src="assets/scripts.js"></script>
 
 </body>
