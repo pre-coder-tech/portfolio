@@ -1,7 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
-  window.addEventListener("scroll", function() {
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
     var scroll = window.scrollY || document.documentElement.scrollTop;
-    console.log(scroll);
     var arrows = document.querySelector('.arrows');
     if (scroll >= 1) {
       arrows.classList.add('fade');
@@ -121,14 +120,48 @@ document.addEventListener('DOMContentLoaded', function () {
 // Fetch project data dynamically from the JSON file
 async function fetchProjectData() {
   try {
-    const response = await fetch("assets/projects.json"); // Path to your JSON file
+    const response = await fetch("https://pre-coder-tech.github.io/assets/projects.json"); // Path to your JSON file
     const data = await response.json();
     return data.projects;
   } catch (error) {
     console.error("Error fetching project data:", error);
     return null;
   }
+};
+  
+
+async function createProjectCarousel() {
+  const projects = await fetchProjectData();
+  if (!projects) return;
+
+  const projectList = document.getElementById("projectsCarousel");
+  projectList.innerHTML = ""; // Clear previous content
+
+  Object.keys(projects).forEach(projectKey => {
+    const project = projects[projectKey];
+
+    const carouselItem = document.createElement("div");
+    carouselItem.className = "pro";
+    carouselItem.onclick = () => openModal(projectKey);
+
+    const imgElement = document.createElement("img");
+    imgElement.src = project.images[0];
+    imgElement.alt = project.title;
+
+    const conElement = document.createElement("div");
+    conElement.className = "con";
+    const titleElement = document.createElement("p");
+    titleElement.style.fontSize = "medium";
+    titleElement.textContent = project.title;
+
+    conElement.appendChild(titleElement);
+    carouselItem.appendChild(imgElement);
+    carouselItem.appendChild(conElement);
+    projectList.appendChild(carouselItem);
+  });
 }
+
+createProjectCarousel();
 
 // Function to open the modal
 async function openModal(projectKey) {
@@ -140,35 +173,99 @@ async function openModal(projectKey) {
 
   const project = projects[projectKey];
 
-  // Set modal content
-  document.getElementById("modalTitle").innerText = project.title;
-  document.getElementById("modalType").innerText = project.type;
-  document.getElementById("modalTechnologies").innerText = project.technologies;
-  const repoLink = document.getElementById("modalRepo");
-  repoLink.href = project.repo;
-  repoLink.style.display = project.repo ? "inline" : "none";
-
   // Populate the slider
-  const slider = document.getElementById("modalSlider");
+  const slider = document.getElementById("modalContent");
   slider.innerHTML = ""; // Clear previous content
+
+  let count = 0;
+  let totalSlides = project.videos.length + project.images.length;
 
   // Add videos first
   project.videos.forEach((videoUrl) => {
+    const mySlidesElement = document.createElement("div")
+    mySlidesElement.className = "mySlides fadeIn";
+    if (count == 0) { mySlidesElement.style.display = "block"; } else { mySlidesElement.style.display = "none"; }
+    const numberElement = document.createElement("div");
+    numberElement.className = "numbertext";
+    numberElement.innerText = `${++count} / ${totalSlides}`;
     const videoElement = document.createElement("video");
     videoElement.src = videoUrl;
-    videoElement.controls = true; // Add playback controls
-    videoElement.className = "slider-item";
-    slider.appendChild(videoElement);
+    videoElement.autoplay = true;
+    videoElement.muted = true;
+    videoElement.loop = true;
+    videoElement.className = "project-media";
+    videoElement.style.width = "100%";
+    videoElement.style.borderRadius = "1rem";
+    mySlidesElement.appendChild(numberElement);
+    mySlidesElement.appendChild(videoElement);
+    slider.appendChild(mySlidesElement);
   });
 
   // Add images
   project.images.forEach((imageUrl) => {
+    const mySlidesElement = document.createElement("div")
+    mySlidesElement.className = "mySlides fadeIn";
+    if (count == 0) { mySlidesElement.style.display = "block"; } else { mySlidesElement.style.display = "none"; }
+    const numberElement = document.createElement("div");
+    numberElement.className = "numbertext";
+    numberElement.innerText = `${++count} / ${totalSlides}`;
     const imgElement = document.createElement("img");
     imgElement.src = imageUrl;
     imgElement.alt = project.title;
-    imgElement.className = "slider-item";
-    slider.appendChild(imgElement);
-  });
+    imgElement.className = "project-media";
+    imgElement.style.width = "100%";
+    imgElement.style.borderRadius = "1rem";
+    mySlidesElement.appendChild(numberElement);
+    mySlidesElement.appendChild(imgElement);
+    slider.appendChild(mySlidesElement);
+  }); scroll
+
+  const textContentElement = document.createElement("div");
+  textContentElement.className = "text";
+
+  const titleSpanElement = document.createElement("span");
+  titleSpanElement.style.fontSize = "x-large";
+  titleSpanElement.innerText = project.title;
+  textContentElement.appendChild(titleSpanElement);
+
+  textContentElement.appendChild(document.createElement("br"));
+
+  const shortDescSpanElement = document.createElement("span");
+  shortDescSpanElement.style.fontSize = "small";
+  shortDescSpanElement.innerText = project.type + " | " + project.technologies;
+  textContentElement.appendChild(shortDescSpanElement);
+
+  textContentElement.appendChild(document.createElement("br"));
+  textContentElement.appendChild(document.createElement("br"));
+
+  const descriptionSpanElement = document.createElement("span");
+  descriptionSpanElement.innerText = project.description;
+  textContentElement.appendChild(descriptionSpanElement);
+
+  const repoLinkElement = document.createElement("a");
+  repoLinkElement.href = project.repo;
+  repoLinkElement.target = "_blank";
+  repoLinkElement.innerText = "Repository";
+  repoLinkElement.style.display = project.repo ? "inline" : "none";
+  repoLinkElement.style.textDecoration = "none";
+  textContentElement.appendChild(repoLinkElement);
+
+  slider.appendChild(textContentElement);
+  
+  const leftArrowElement = document.createElement("a");
+  leftArrowElement.className = "prev";
+  leftArrowElement.innerText = "❮";
+  leftArrowElement.onclick = () => plusSlides(-1);
+  if (totalSlides == 1) { leftArrowElement.style.display = "none"; }
+  slider.appendChild(leftArrowElement);
+
+  const rightArrowElement = document.createElement("a");
+  rightArrowElement.className = "next";
+  rightArrowElement.innerText = "❯";
+  rightArrowElement.onclick = () => plusSlides(1);
+  if (totalSlides == 1) { rightArrowElement.style.display = "none"; }
+  slider.appendChild(rightArrowElement);
+
 
   // Show the modal
   document.getElementById("projectModal").style.display = "block";
@@ -186,3 +283,27 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+// Close modal when pressing the "Esc" key
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
+
+let slideIndex = 1;
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}

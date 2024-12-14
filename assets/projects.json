@@ -1,19 +1,19 @@
 {
     "projects": {
       "project1": {
-        "title": "API Automation using Postnan",
+        "title": "API Automation using Postman",
         "type": "Betterhalf.ai API testing Project",
         "videos": ["assets/project_assets/postman_api_automation/apiautomation_postman.mp4"],
-        "images": [],
-        "technologies": "Postman, JS, Postman Runner Tool, ",
+        "images": ["assets/project_assets/postman_api_automation/apiautomation_postman.png"],
+        "technologies": "Postman, JS, Postman Runner Tool",
         "repo": "",
-        "description": "This project was done as part of API automation. \n The plan was to automate APIs for running each time any change in Backend is done related to APIs. \n I have used Postman Tool and it's Runner tool functionlaity to create test cases and test. \n The test cases were ran in local machine of each Quality engineer. And later it was converted to a Script using Python Language (Request Library) to include it as part of Jenkins Deployment."
+        "description": "The plan was to automate APIs for running each time any change in Backend is done related to APIs. \n I have used Postman Tool and it's Runner tool functionality to create test cases and test. \n The test cases were ran in local machine of each Quality engineer. And later it was converted to a Script using Python Language (Request Library) to include it as part of Jenkins Deployment."
       },
       "project2": {
         "title": "Mock Server Using Postman",
         "type": "Betterhalf.ai API Contract creation Project",
         "videos": ["assets/project_assets/postman_mockserver/postman_mockserversetup.mp4"],
-        "images": [],
+        "images": ["assets/project_assets/postman_mockserver/postman_mockserver.png"],
         "technologies": "Postman, Mock Server Functionality of Postman",
         "repo": "",
         "description":"This Project was done as part of API contract creation between Backend & Frontend Developers. \n The idea was to make sure the Frontend developers are not blocked until the Backend developers complete API setup, a mock API would be created and provided to them. This made sure the tasks are completed on the said timeline and no delays are caused. \n There are multiple services which give a functionality of mock server creation / mock api creation. However, so that we don't have to save our company api's anywhere, I had come up witha plan to create a Mock server inside our company Postman workspace. This made sure the api's are secure enough."
@@ -22,7 +22,7 @@
         "title": "Daily Web Performance Report",
         "type": "Self-Learning & Betterhalf.ai Web Performance Report Generation Project",
         "videos": [],
-        "images": ["assets/project_assets/daily_web_performance_report/PerformanceReportPDF.png", "assets/project_assets/daily_web_performance_report/slack_performancereport.png"],
+        "images": ["assets/project_assets/daily_web_performance_report/daily_performance.png","assets/project_assets/daily_web_performance_report/PerformanceReportPDF.png", "assets/project_assets/daily_web_performance_report/slack_performancereport.png"],
         "technologies": "Node.Js Language, Express JS, Google Page Speed Insights API, Chrome Devtools, Slack Incoming Webhook",
         "repo": "",
         "description":""
