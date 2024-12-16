@@ -4,28 +4,81 @@
         "title": "API Automation using Postman",
         "type": "Betterhalf.ai API testing Project",
         "videos": ["assets/project_assets/postman_api_automation/apiautomation_postman.mp4"],
-        "images": ["assets/project_assets/postman_api_automation/apiautomation_postman.png"],
+        "images": [],
+        "card_image": "assets/project_assets/postman_api_automation/apiautomation_postman.png",
         "technologies": "Postman, JS, Postman Runner Tool",
         "repo": "",
         "description": "The plan was to automate APIs for running each time any change in Backend is done related to APIs. \n I have used Postman Tool and it's Runner tool functionality to create test cases and test. \n The test cases were ran in local machine of each Quality engineer. And later it was converted to a Script using Python Language (Request Library) to include it as part of Jenkins Deployment."
       },
       "project2": {
+        "title": "Daily Web Performance Report",
+        "type": "Self-Learning & Betterhalf.ai Web Performance Report Generation Project",
+        "videos": [],
+        "images": ["assets/project_assets/daily_web_performance_report/PerformanceReportPDF.png", "assets/project_assets/daily_web_performance_report/slack_performancereport.png"],
+        "card_image": "assets/project_assets/daily_web_performance_report/daily_performance.png",
+        "technologies": "Node.Js Language, Express JS, Google Page Speed Insights API, NPM Lighthouse Library, Chrome Devtools, Slack Incoming Webhook",
+        "repo": "",
+        "description":"Concern was we need to make sure the production web pages have Good Performance Scores. Hence, the project was created to get the performance of the pages mentioned by makreting team and send the report in Slack."
+      },
+      "project3": {
+        "title": "Web Performance Automation Tool",
+        "type": "Self-Learning & Was Created for both Simplilearn & Betterhalf.ai Company",
+        "videos": ["assets/project_assets/webperformance_tool/webperformance_automation.mp4"],
+        "images": [],
+        "card_image":"assets/project_assets/webperformance_tool/generate_performance.png",
+        "technologies":"Node.Js Language, Express JS, Google Page Speed Insights API, NPM LightHouse Library, Chrome Devtools",
+        "repo": "",
+        "description": "Issue was where QAs had to check Performance for each single page in Chrome Lighthouse, this was occuping too much manual bandwidth of the QAs. To tackle this, theis tool was created where multiple URLs can be added at a time and the performance reports can be generated. This helped the QA teams to get extra time for other testings and learnings."
+      },
+      "project4": {
         "title": "Mock Server Using Postman",
         "type": "Betterhalf.ai API Contract creation Project",
         "videos": ["assets/project_assets/postman_mockserver/postman_mockserversetup.mp4"],
-        "images": ["assets/project_assets/postman_mockserver/postman_mockserver.png"],
+        "images": [],
+        "card_image": "assets/project_assets/postman_mockserver/postman_mockserver.png",
         "technologies": "Postman, Mock Server Functionality of Postman",
         "repo": "",
         "description":"This Project was done as part of API contract creation between Backend & Frontend Developers. \n The idea was to make sure the Frontend developers are not blocked until the Backend developers complete API setup, a mock API would be created and provided to them. This made sure the tasks are completed on the said timeline and no delays are caused. \n There are multiple services which give a functionality of mock server creation / mock api creation. However, so that we don't have to save our company api's anywhere, I had come up witha plan to create a Mock server inside our company Postman workspace. This made sure the api's are secure enough."
       },
-      "project3": {
-        "title": "Daily Web Performance Report",
-        "type": "Self-Learning & Betterhalf.ai Web Performance Report Generation Project",
-        "videos": [],
-        "images": ["assets/project_assets/daily_web_performance_report/daily_performance.png","assets/project_assets/daily_web_performance_report/PerformanceReportPDF.png", "assets/project_assets/daily_web_performance_report/slack_performancereport.png"],
-        "technologies": "Node.Js Language, Express JS, Google Page Speed Insights API, Chrome Devtools, Slack Incoming Webhook",
+      "project5": {
+        "title": "Jira Documentation Website",
+        "type": "Self-Learning & Created specifically for Betterhalf.ai",
+        "videos": ["assets/project_assets/jira_documentation_website/jira board documentation.mp4"],
+        "images": [],
+        "card_image":"assets/project_assets/jira_documentation_website/jiradoc.png",
+        "technologies":"HTML, CSS, JavaScript",
         "repo": "",
-        "description":""
+        "description": ""
+      },
+      "project6": {
+        "title": "Jira Administration Changes",
+        "type": "Task for Betterhalf.ai Engineering Team",
+        "videos": [],
+        "images": ["assets/project_assets/jira_admin/priorityissue_updated.png", "assets/project_assets/jira_admin/Jira_addSPtostory.png"],
+        "card_image":"assets/project_assets/jira_admin/Jira_addSPtostory.png",
+        "technologies":"Jira",
+        "repo": "",
+        "description": ""
+      },
+      "project7": {
+        "title": "MixPanel Tool JQL Queries",
+        "type": "Task for Betterhalf.ai Marketing Team",
+        "videos": [],
+        "images": ["assets/project_assets/mixpanel_jql/query1.png", "assets/project_assets/mixpanel_jql/query2.png"],
+        "card_image":"assets/project_assets/mixpanel_jql/query2.png",
+        "technologies":"MixPanel Analytics Tool, JQL",
+        "repo": "",
+        "description": ""
+      },
+      "project8": {
+        "title": "Celebration Reminders",
+        "type": "Task for Betterhalf.ai Human Resource Team",
+        "videos": [],
+        "images": ["assets/project_assets/celebration_reminder/hrautomation_scripting.png", "assets/project_assets/celebration_reminder/slack_celebrations.png"],
+        "card_image":"assets/project_assets/celebration_reminder/slack_celebrations.png",
+        "technologies":"Google Sheets, Google AppScript, Slack API Incoming Webhook",
+        "repo": "",
+        "description": ""
       }
     }
   }
