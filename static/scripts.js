@@ -145,6 +145,8 @@ async function createCertificateCarousel() {
   });
 }
 
+createCertificateCarousel();
+
 // Fetch project data dynamically from the JSON file
 async function fetchProjectData() {
   try {
