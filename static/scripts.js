@@ -117,6 +117,34 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Fetch certificates data dynamically from the JSON file
+async function fetchCertificatesData() {
+  try {
+    const response = await fetch("https://pre-coder-tech.github.io/assets/certificates.json"); // Path to your JSON file
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching project data:", error);
+    return null;
+  }
+};
+
+async function createCertificateCarousel() {
+  const certificates = await fetchCertificatesData();
+  if (!certificates) return;
+
+  const certificateList = document.getElementById("certificates");
+  certificateList.innerHTML = ""; // Clear previous content
+
+  certificates.forEach(certificate => {
+    const imgElement = document.createElement("img");
+    imgElement.src = certificate.card_image;
+    imgElement.alt = certificate.title;
+
+    certificateList.appendChild(imgElement);
+  });
+}
+
 // Fetch project data dynamically from the JSON file
 async function fetchProjectData() {
   try {
