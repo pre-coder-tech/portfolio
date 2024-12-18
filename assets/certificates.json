@@ -1,29 +1,33 @@
 {
     "1": {
+        "card_image":"assets/images/certificates/python_refresh.jpg",
+        "title": "Python Refresh"
+    },
+    "2": {
         "card_image":"assets/images/certificates/learning_python_linkedin.png",
         "title": "Learning Python"
     },
-    "2": {
+    "3": {
         "card_image":"assets/images/certificates/typescript_w3schools.png",
         "title": "Typescript W3Schools"
     },
-    "3": {
+    "4": {
         "card_image":"assets/images/certificates/performance_testing_foundations_udemy.jpg",
         "title": "Performance Testing Foundations"
     },
-    "4": {
+    "5": {
         "card_image":"assets/images/certificates/bdd_linkedin.jpg",
         "title": "BDD with Java"
     },
-    "5": {
+    "6": {
         "card_image":"assets/images/certificates/cucumber_java_udemy.jpg",
         "title": "Cucumber Java with Selenium"
     },
-    "6": {
+    "7": {
         "card_image":"assets/images/certificates/cucumber_training_linkedin.jpg",
         "title": "Cucumber Training"
     },
-    "7": {
+    "8": {
         "card_image":"assets/images/certificates/datascience_w3schools.png",
         "title": "DataScience with W3Schools"
     }
