@@ -136,7 +136,8 @@ async function createCertificateCarousel() {
   const certificateList = document.getElementById("certificates");
   certificateList.innerHTML = ""; // Clear previous content
 
-  certificates.forEach(certificate => {
+  Object.keys(certificates).forEach(certificateKey => {
+    const certificate = certificates[certificateKey];
     const imgElement = document.createElement("img");
     imgElement.src = certificate.card_image;
     imgElement.alt = certificate.title;
@@ -158,7 +159,7 @@ async function fetchProjectData() {
     return null;
   }
 };
-  
+
 
 async function createProjectCarousel() {
   const projects = await fetchProjectData();
@@ -281,7 +282,7 @@ async function openModal(projectKey) {
   textContentElement.appendChild(repoLinkElement);
 
   slider.appendChild(textContentElement);
-  
+
   const leftArrowElement = document.createElement("a");
   leftArrowElement.className = "prev";
   leftArrowElement.innerText = "❮";
