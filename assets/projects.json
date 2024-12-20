@@ -1,5 +1,15 @@
 {
     "projects": {
+      "seleniumautoj_spicejetslf": {
+        "title": "SpiceJet Search Flight Automation - Java",
+        "type": "Self Learning",
+        "videos": ["assets/project_assets/selenium_spicejet/SeleniumAutomationJ_Spicejet.mp4"],
+        "images": [],
+        "card_image": "assets/project_assets/selenium_spicejet/card.png",
+        "technologies": "Java, Selenium WebDriver, TestNG, Maven, POM",
+        "repo": "",
+        "description": "This Project covers the major automation of all types of Dropdowns, along with handling Dynamic Elements. To handle Dynamic Elements XPath is used."
+      },
       "apiautomationbai": {
         "title": "API Automation using Postman",
         "type": "Betterhalf.ai API testing Project",
